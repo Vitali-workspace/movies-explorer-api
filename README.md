@@ -2,9 +2,10 @@
 Бэкенд код приложения для поиска фильмов. С регистрацией и возможностью сохранять, удалять фильмы из избранного.
 
 ## Ссылки на Pull requests
+http://frontend.diplom.vitali.nomoredomains.club/
 
-(frontend) 
-(backend)
+(frontend) https://github.com/Vitali-workspace/movies-explorer-frontend/pull/2
+(backend) https://github.com/Vitali-workspace/movies-explorer-api/pull/2
 
 
 ## Ссылка на приложение
