@@ -1,5 +1,5 @@
 const { celebrate, Joi } = require('celebrate');
-const { regUrl } = require('../utils/constants');
+const { regUrl, regExpEmail } = require('../utils/constants');
 
 module.exports.validatorCreateMovie = celebrate({
   body: Joi.object().keys({
@@ -19,7 +19,7 @@ module.exports.validatorCreateMovie = celebrate({
 
 module.exports.validatorLogin = celebrate({
   body: Joi.object().keys({
-    email: Joi.string().invalid(null, '').required().email(),
+    email: Joi.string().invalid(null, '').required().regex(regExpEmail),
     password: Joi.string().invalid(null, '').required(),
   }),
 });
@@ -27,7 +27,7 @@ module.exports.validatorLogin = celebrate({
 module.exports.validatorRegistration = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(3).max(30).required(),
-    email: Joi.string().invalid(null, '').required().email(),
+    email: Joi.string().invalid(null, '').required().regex(regExpEmail),
     password: Joi.string().invalid(null, '').required(),
   }),
 });
@@ -41,6 +41,6 @@ module.exports.validatorDeleteMovie = celebrate({
 module.exports.validatorUpdateUser = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(3).max(30).required(),
-    email: Joi.string().invalid(null, '').email().required(),
+    email: Joi.string().invalid(null, '').regex(regExpEmail).required(),
   }),
 });
