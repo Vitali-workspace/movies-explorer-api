@@ -1,46 +1,52 @@
-# Описание проекта
-Бэкенд код приложения для поиска фильмов. С регистрацией и возможностью сохранять, удалять фильмы из избранного.
+# 🎬 Приложение Movies Explorer (Backend)
 
-## Ссылки на Pull requests
-http://frontend.diplom.vitali.nomoredomains.club/
+🎬 Backend часть приложения "Movies Explorer" для поиска фильмов.
 
-(frontend) https://github.com/Vitali-workspace/movies-explorer-frontend/pull/2
-(backend) https://github.com/Vitali-workspace/movies-explorer-api/pull/2
+> [!NOTE]
+> [Ссылка на Frontend репозиторий](https://github.com/Vitali-workspace/diplom-server-frontend)
 
+<h2>&#10032; Основные функции</h2>
 
-## Ссылка на приложение
-Адрес для бэкенда:  https://api.diplom.vitali.nomoredomains.club
+- Регистрация пользователя 
+- Поиск фильмов
+- Фильтрация короткометражных фильмов
+- Сохранение фильмов в базе данных
+- Удаление фильма в базе данных
+- Изменение почты и пароля пользователя
 
------
+<h2>&#10032; Используемые технологии</h2>
 
-### Ссылка на макет в Figma
-https://www.figma.com/file/tMo7JCcdkFSvUQDulClzlB/Diploma-(myCopy)?node-id=891%3A3857&t=ijleTTFAdsKN0vt8-0
+> [!IMPORTANT]
+> - JavaScript
+> - NodeJS
+> - Express.js
+> - Мongoose
+> - MongoDB
+> - Winston
+> - Celebrate
+> - JSON Web Token
 
-https://drive.google.com/file/d/19_bHbG637SyOMvvi04h6hP7EhsCUT4me/view?usp=share_link
+<h2>&#10032; Команды для установки приложения</h2>
 
-## Ссылка на api
-https://github.com/Vitali-workspace/movies-explorer-api
+#### Установка зависимостей
 
-## Ссылка на frontend
-https://github.com/Vitali-workspace/movies-explorer-frontend
+```
+npm i
+```
+#### Запуск
 
+```
+npm run start
+```
 
-## В проекте использовались:
-- Node.js
-- mongoose
-- express.js
-- mongoDB
-- celebrate
-- Яндекс.Облако
+<h2>&#10032; Примеры типов данных для запросов</h2>
 
------
-
-## Примеры шаблонов запросов для Postman
-
-### Создание фильма (post): 
+### Создание фильма (post-запрос): 
+```
 https://api.diplom.vitali.nomoredomains.club/movies
+```
 
-<code>
+```json
 {"country": "USA",
 "director": "Funken",
 "duration": "114",
@@ -52,25 +58,41 @@ https://api.diplom.vitali.nomoredomains.club/movies
 "movieId": "185759318403756309353299",
 "nameRU": "Ханкен",
 "nameEN": "Hanken"}
-</code>
+```
 
-### Изменение данных пользователя (patch): 
+### Изменение данных пользователя (patch-запрос):
+```
 https://api.diplom.vitali.nomoredomains.club/users/me
+```
 
-<code>{"name":"Rename", "email": "testemail@gmail.com"}</code>
+```json
+{"name":"Rename", "email": "testemail@gmail.com"}
+```
 
-### Удаление фильма созданного пользователем (delete):
-https://api.diplom.vitali.nomoredomains.club/movies/185759318403756309353299
+### Удаление фильма созданного пользователем (delete-запрос):
+```
+https://api.diplom.vitali.nomoredomains.club/movies/{movieId}
+```
 
-### Выход из аккаунта (post):
+### Выход из аккаунта (post-запрос):
+```
 https://api.diplom.vitali.nomoredomains.club/signout
+```
 
-### Вход в приложение (post): 
+### Вход в аккаунт (post-запрос):
+```
 https://api.diplom.vitali.nomoredomains.club/signin
+```
 
-<code>{"email": "testemail@gmail.com", "password": "pass343456"}</code>
+```json
+{"email": "testemail@gmail.com", "password": "pass343456"}
+```
 
-### Регистрация нового пользователя (post): 
+### Регистрация нового пользователя (post-запрос):
+```
 https://api.diplom.vitali.nomoredomains.club/signup
+```
 
-<code>{"name":"Newname", "email": "newemail@gmail.com", "password": "pass343456"}</code>
+```json
+{"name":"Newname", "email": "newemail@gmail.com", "password": "pass343456"}
+```
